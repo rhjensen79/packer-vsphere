@@ -9,3 +9,6 @@ packer_cache/
 
 ## ignore crash log files
 crash.log
+
+## vCenter variable file
+#/.vsphere.pkrvars.hcl
