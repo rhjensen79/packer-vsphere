@@ -11,4 +11,4 @@ packer_cache/
 crash.log
 
 ## vCenter variable file
-#/.vsphere.pkrvars.hcl
+vsphere.pkrvars.hcl

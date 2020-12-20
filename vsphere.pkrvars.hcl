@@ -9,7 +9,7 @@
 # Credentials
 
 vcenter_username = "administrator@vsphere.local"
-vcenter_password = "changeme"
+vcenter_password = "VMware9!"
 build_username   = "rainpole"
 build_password   = "R@in!$aG00dThing."
 
