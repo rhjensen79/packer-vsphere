@@ -54,6 +54,12 @@ sudo sed -i 's/D/#&/' /usr/lib/tmpfiles.d/tmp.conf
 echo '> Adding After=dbus.service to open-vm-tools ...'
 sudo sed -i '/^After=vgauthd.service/a\After=dbus.service' /lib/systemd/system/open-vm-tools.service
 
+### Install Salt Minion
+wget -O install_salt.sh https://bootstrap.saltstack.com
+sudo sh install_salt.sh
+sudo service salt-minion stop
+sudo rm /etc/salt/minion_id
+
 ### Create a cleanup script. ###
 echo '> Creating cleanup script ...'
 sudo cat <<EOF > /tmp/cleanup.sh
@@ -107,6 +113,9 @@ unset HISTFILE
 history -cw
 echo > ~/.bash_history
 rm -fr /root/.bash_history
+
+# Setup Cloud-Init
+sudo cloud-init clean
 EOF
 
 ### Change script permissions for execution. ### 
